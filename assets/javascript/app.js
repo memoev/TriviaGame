@@ -38,7 +38,7 @@ var trivia = {
     ]
 };
 var timeStuff = {
-    timer: function timeConverter(t) {
+    timerConverter: function(t) {
 
         //  Takes the current time in seconds and convert it to minutes and seconds (mm:ss).
         var minutes = Math.floor(t / 60);
