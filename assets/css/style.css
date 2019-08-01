@@ -1,3 +1,11 @@
 html body {
     background: url(../images/thering.jpg)
 }
+
+.jumbotron {
+    width: 80%;
+    margin: auto;
+    margin-top: 100px;
+    opacity: 0.7;
+    text-align: center;
+}
