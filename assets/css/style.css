@@ -9,3 +9,8 @@ html body {
     opacity: 0.7;
     text-align: center;
 }
+
+.display-3 {
+    font-family: 'Major Mono Display', monospace;
+    font-size: 52px;
+}
