@@ -1,5 +1,5 @@
 var trivia = {
-   QandA: [
+    QandA: [
         {
            Question: "The Lord of the Rings movies are based on a novel by what author?",
            CorrectAns: "J. R. R. Tolkien",
@@ -34,9 +34,10 @@ var trivia = {
             Answers: [
                 "Arwen", "Éowyn", "Elrond", "Himself"
             ]
-        }
-       
-   ],
+        }  
+    ]
+};
+var timeStuff = {
     timer: function timeConverter(t) {
 
         //  Takes the current time in seconds and convert it to minutes and seconds (mm:ss).
