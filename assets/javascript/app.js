@@ -127,8 +127,9 @@ var game = {
                 $(".lead").empty();
                 $(".timer").empty();
                 $("#question").empty();
-                $("#answers").empty()
-                $("#result").text("You picked the correct answer, my friend!");
+                $("#answers").empty();
+                $("#result").append("<h3>");
+                $("h3").text("You picked the correct answer, my friend!");
                 $("#result").append("<img>");
                 $("img").addClass("size");
                 $("img").attr("src", trivia.QandA[k].Image);
@@ -141,7 +142,8 @@ var game = {
                 $(".timer").empty();
                 $("#question").empty();
                 $("#answers").empty();
-                $("#result").text("This is not the correct answer, my friend! The correct answer is " + trivia.QandA[k].CorrectAns);
+                $("#result").append("<h3>");
+                $("h3").text("This is not the correct answer, my friend! The correct answer is " + trivia.QandA[k].CorrectAns);
                 timeStuff.stopTimer();
                 time = 10;
                 timeStuff.startTimer();
