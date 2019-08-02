@@ -43,6 +43,8 @@ var trivia = {
     ]
 };
 var time;
+var correct = 0;
+var incorrect = 0;
 var intervalId;
 var clockRunning = false;
 var timeStuff = {
