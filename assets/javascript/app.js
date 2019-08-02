@@ -127,6 +127,7 @@ var game = {
 
         $("button").click( function() {
             if (this.innerHTML === trivia.QandA[k].CorrectAns) {
+                correct++;
                 $(".lead").empty();
                 $(".timer").empty();
                 $("#question").empty();
@@ -141,6 +142,7 @@ var game = {
                 timeStuff.startTimer();
                 timeStuff.runTimer();
             } else {
+                incorrect++;
                 $(".lead").empty();
                 $(".timer").empty();
                 $("#question").empty();
