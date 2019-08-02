@@ -8,6 +8,7 @@ html body {
     margin-top: 100px;
     opacity: 0.7;
     text-align: center;
+    border: 10px solid #000000;
 }
 
 .display-3 {
@@ -21,6 +22,7 @@ html body {
 
 #question {
     font-size: 22px;
+    font-weight: bold;
 }
 
 #answers {
