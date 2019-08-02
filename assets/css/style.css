@@ -29,3 +29,8 @@ html body {
     list-style-type: none;
     font-size: 26px;
 }
+
+button {
+    width: 40%;
+    margin-bottom: 10px;
+}
