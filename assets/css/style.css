@@ -18,3 +18,12 @@ html body {
     font-weight: normal;
     font-style: normal;
 }
+
+#question {
+    font-size: 22px;
+}
+
+#answers {
+    list-style-type: none;
+    font-size: 26px;
+}
