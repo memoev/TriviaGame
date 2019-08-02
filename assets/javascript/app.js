@@ -121,6 +121,7 @@ var game = {
         for (i = 0; i < trivia.QandA[k].Answers.length; i++) {
             $("ul").append("<li><button>" + trivia.QandA[k].Answers[i] + "</button></li>");  
         };
+        trivia.QandA.splice(k, 1);
 
         $("button").click( function() {
             if (this.innerHTML === trivia.QandA[k].CorrectAns) {
@@ -150,7 +151,6 @@ var game = {
                 timeStuff.runTimer();
             };
         });
-
     }
 }
 
