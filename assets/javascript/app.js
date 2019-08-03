@@ -49,6 +49,8 @@ var questionLap = trivia.QandA.length;
 var time;
 var correct = 0;
 var incorrect = 0;
+var k;
+var checker;
 var intervalId;
 var clockRunning = false;
 var timeStuff = {
@@ -104,7 +106,25 @@ var timeStuff = {
             if (questionLap === 0){
                 game.finish(correct, incorrect);
             } else {
-                game.play();
+                if (checker !== false) {
+                    game.play();
+                } else {
+                    incorrect++;
+                    questionLap--;
+                    console.log(incorrect);
+                    $(".lead").empty();
+                    $(".timer").empty();
+                    $("#question").empty();
+                    $("#answers").empty();
+                    $("#result").append("<h3>");
+                    $("h3").text("Time is not eternal, my friend! The correct answer is " + trivia.QandA[k].CorrectAns);
+                    timeStuff.stopTimer();
+                    time = 5;
+                    timeStuff.startTimer();
+                    timeStuff.runTimer();
+                    trivia.QandA.splice(k, 1);
+                    checker =  true;
+                }
             }
         }
         
@@ -119,8 +139,9 @@ var timeStuff = {
 };
 var game = {
     play: function() {
+        checker = false;
         $("#result").empty();
-        var k = Math.floor(Math.random() * trivia.QandA.length)
+        k = Math.floor(Math.random() * trivia.QandA.length)
 
         time = 20 + 1;
         timeStuff.startTimer();
@@ -136,6 +157,7 @@ var game = {
             if (this.innerHTML === trivia.QandA[k].CorrectAns) {
                 correct++;
                 questionLap--;
+                checker = true;
                 console.log(correct);
                 $(".lead").empty();
                 $(".timer").empty();
@@ -155,6 +177,7 @@ var game = {
             } else {
                 incorrect++;
                 questionLap--;
+                checker = true;
                 console.log(incorrect);
                 $(".lead").empty();
                 $(".timer").empty();
