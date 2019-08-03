@@ -176,11 +176,14 @@ var game = {
         $("#result").append("<button> Start Again? </button>");
 
         $("button").click( function() {
+            correct = 0;
+            incorrect = 0;
             console.log(emptytrivia);
             for (i = 0; i < emptytrivia.QandA.length; i++) {
                 trivia.QandA.push(emptytrivia.QandA[i]);
             }
             console.log(trivia);
+            questionLap = trivia.QandA.length;
             game.play();
         })
     }
