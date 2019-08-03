@@ -42,6 +42,9 @@ var trivia = {
         }  
     ]
 };
+var emptytrivia = {
+    QandA : []
+};
 var questionLap = trivia.QandA.length;
 var time;
 var correct = 0;
@@ -93,7 +96,6 @@ var timeStuff = {
         //  TODO: Use the variable you just created to show the converted time in the "display" div.
         
         $('.timer').text(convertedTime);
-        console.log(convertedTime);
         if (time === 0) {
             $("#result").empty();
             $("#question").empty();
@@ -173,14 +175,21 @@ var game = {
         $("#result").append("<button> Start Again? </button>");
 
         $("button").click( function() {
-            trivia = emptytrivia;
+            console.log(emptytrivia);
+            for (i = 0; i < emptytrivia.QandA.length; i++) {
+                trivia.QandA.push(emptytrivia.QandA[i]);
+            }
+            console.log(trivia);
             game.play();
         })
     }
 }
 
 window.onload = function() {
-    emptytrivia = trivia;
+
+    for (i = 0 ; i < trivia.QandA.length ; i++){
+        emptytrivia.QandA.push(trivia.QandA[i]);
+    }
     game.play();
 }
 
