@@ -119,6 +119,7 @@ var timeStuff = {
 };
 var game = {
     play: function() {
+        $("#result").empty();
         var k = Math.floor(Math.random() * trivia.QandA.length)
 
         time = 20 + 1;
@@ -170,7 +171,7 @@ var game = {
             };
         });
     },
-    finish: function(cor, inc, lap) {
+    finish: function(cor, inc) {
         $("#result").text("Here's how you did - Correct Answers: " + cor + " Incorrect Answers: " + inc);
         $("#result").append("<button> Start Again? </button>");
 
