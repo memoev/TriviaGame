@@ -42,6 +42,7 @@ var trivia = {
         }  
     ]
 };
+var questionLap = trivia.QandA.length;
 var time;
 var correct = 0;
 var incorrect = 0;
@@ -98,7 +99,11 @@ var timeStuff = {
             $("#question").empty();
             $("#answers").empty();
             timeStuff.stopTimer();
-            game.play();
+            if (questionLap === 0){
+                game.finish(correct, incorrect);
+            } else {
+                game.play();
+            }
         }
         
     },
@@ -123,11 +128,12 @@ var game = {
         for (i = 0; i < trivia.QandA[k].Answers.length; i++) {
             $("ul").append("<li><button>" + trivia.QandA[k].Answers[i] + "</button></li>");  
         };
-        trivia.QandA.splice(k, 1);
 
         $("button").click( function() {
             if (this.innerHTML === trivia.QandA[k].CorrectAns) {
                 correct++;
+                questionLap--;
+                console.log(correct);
                 $(".lead").empty();
                 $(".timer").empty();
                 $("#question").empty();
@@ -138,11 +144,15 @@ var game = {
                 $("img").addClass("size");
                 $("img").attr("src", trivia.QandA[k].Image);
                 timeStuff.stopTimer();
-                time = 10;
+                time = 3;
                 timeStuff.startTimer();
                 timeStuff.runTimer();
+                trivia.QandA.splice(k, 1);
+                
             } else {
                 incorrect++;
+                questionLap--;
+                console.log(incorrect);
                 $(".lead").empty();
                 $(".timer").empty();
                 $("#question").empty();
@@ -150,15 +160,27 @@ var game = {
                 $("#result").append("<h3>");
                 $("h3").text("This is not the correct answer, my friend! The correct answer is " + trivia.QandA[k].CorrectAns);
                 timeStuff.stopTimer();
-                time = 10;
+                time = 3;
                 timeStuff.startTimer();
                 timeStuff.runTimer();
+                trivia.QandA.splice(k, 1);
+                
             };
         });
+    },
+    finish: function(cor, inc, lap) {
+        $("#result").text("Here's how you did - Correct Answers: " + cor + " Incorrect Answers: " + inc);
+        $("#result").append("<button> Start Again? </button>");
+
+        $("button").click( function() {
+            trivia = emptytrivia;
+            game.play();
+        })
     }
 }
 
 window.onload = function() {
+    emptytrivia = trivia;
     game.play();
 }
 
