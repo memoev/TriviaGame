@@ -5,7 +5,9 @@ Trivia game using JavaScript for the logic and jQuery to manipulate HTML
   
 Trivia game looping thorugh and array of quesitons and answers randomly. The game shows only one question until the player answers it or their time runs out. If the player selects the correct answer, a screen congratulating them for choosing the right option is displayed. After a `5 seconds`, the next questions is display -- without user input.  
     
-The scenario is similar for wrong answers and time-outs. If the player runs out of time, a time's up shows and the correct answer gets displayed, after a `5 seconds` the next question is showed. If the player chooses the wrong answer, the game tells the player they selected the wrong option and then displays the correct answer. Following the same time logic it then show the next question.  
+The scenario is similar for wrong answers and time-outs. If the player runs out of time, a time's up shows and the correct answer gets displayed, after a `5 seconds` the next question is showed. If the player chooses the wrong answer, the game tells the player they selected the wrong option and then displays the correct answer. Following the same time logic it then show the next question. 
+
+I would like by stating that this code is a little WET and still needs to get refactored, but it works like a charm! Refactorization will me done as a part of the maintenance of this code. It's been proven that *"Premature optimization is the root of all evil" - Donald Knuth*, 
   
 Time is the most important variable in this assignment, because along with the buttons, controls the ligc of the game. Time gets strated, run, and stoped using the `setInterval` and `clearInterval` javascript methods, encapsulated inside and object that also has a `timeConverter` method embeded. 
   
