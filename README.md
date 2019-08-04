@@ -15,7 +15,7 @@ On the final screen, you'll be able to see the number of correct answers, incorr
   
 ## Code Overview :deciduous_tree:
 
-I would like by stating that this code is a little WET and still needs to get refactored, but it works like a charm! Refactorization will me done as a part of the maintenance of this code. It's been proven that *"Premature optimization is the root of all evil" - Donald Knuth*, 
+I would like to start by stating that this code is still a little WET and needs to get refactored, but it works like a charm! Refactorization will be done as a part of the maintenance to the code. It's been proven that *"Premature optimization is the root of all evil" - Donald Knuth*. 
   
 Time is the most important variable in this assignment, because along with the buttons, controls the ligc of the game. Time gets strated, run, and stoped using the `setInterval` and `clearInterval` javascript methods, encapsulated inside and object that also has a `timeConverter` method embeded. 
   
