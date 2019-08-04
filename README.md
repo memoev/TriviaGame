@@ -1,11 +1,19 @@
 # TriviaGame
-Trivia game using JavaScript for the logic and jQuery to manipulate HTML
+A Lord of the Rings trivia game using JavaScript as logic and jQuery to manipulate HTML.
 
-# Instructions :memo:  
+## Game Proposition
   
-Trivia game looping thorugh and array of quesitons and answers randomly. The game shows only one question until the player answers it or their time runs out. If the player selects the correct answer, a screen congratulating them for choosing the right option is displayed. After a `5 seconds`, the next questions is display -- without user input.  
+This game can be added to either a static or dynamic web page to make more attrative to clicks (no SEO).
+
+## Instructions :memo:  
+  
+Trivia game randomly looping through an array/list of quesitons and answers. The game starts showing one question until the player answers it or their time runs out. If the player selects the correct answer, a screen congratulating them for choosing the right option is displayed. After a `5 seconds` wait, the next questions is display -- without user input.  
     
-The scenario is similar for wrong answers and time-outs. If the player runs out of time, a time's up shows and the correct answer gets displayed, after a `5 seconds` the next question is showed. If the player chooses the wrong answer, the game tells the player they selected the wrong option and then displays the correct answer. Following the same time logic it then show the next question. 
+The scenario is similar for wrong answers and time-outs. If the player runs out of time, a time's up screen shows up and the correct answer gets displayed, after a `5 seconds` wait the next question is showed. If the player chooses the wrong answer, the game tells the player they selected the wrong option and displays along the correct answer. Following the same `5 sesonds` time logic, it shows the next question. 
+  
+On the final screen, you'll be able to see the number of correct answers, incorrect answers, and an option to restart the game (without having to reload the page).  
+  
+## Code Overview ::deciduous_tree::
 
 I would like by stating that this code is a little WET and still needs to get refactored, but it works like a charm! Refactorization will me done as a part of the maintenance of this code. It's been proven that *"Premature optimization is the root of all evil" - Donald Knuth*, 
   
@@ -89,5 +97,17 @@ var timeStuff = {
     }
 };
 ```
-  
-On the final screen, you'll be able to see the number of correct answers, incorrect answers, and an option to restart the game (without having to reload the page).  
+## Prerequisites
+Working web browser (e.g Chrome, Firefox, Safari, Opera, etc.) fromt the list of browser that support jQuery (https://jquery.com/browser-support/):
+
+* Desktop:
+  * Chrome: (Current - 1) and Current
+  * Edge: (Current - 1) and Current
+  * Firefox: (Current - 1) and Current, ESR
+  * Internet Explorer: 9+
+  * Safari: (Current - 1) and Current
+  * Opera: Current
+
+* Mobile
+  * Stock browser on Android 4.0+
+  * Safari on iOS 7+
