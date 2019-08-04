@@ -1,7 +1,9 @@
+ /* background */
 html body {
     background: url(../images/thering.jpg)
 }
 
+ /* master container */
 .jumbotron {
     width: 80%;
     margin: auto;
@@ -11,6 +13,7 @@ html body {
     border: 10px solid #000000;
 }
 
+ /* header */
 .display-3 {
     font-size: 52px;
     font-family: 'anironbold';
@@ -20,15 +23,18 @@ html body {
     font-style: normal;
 }
 
+/* result holder */
 #result {
     font-size: 24px;
 }
 
+/* size of images */
 .size {
     width: 350px;
     height: 200px;
 }
 
+/* content */
 #question {
     font-size: 22px;
     font-weight: bold;
@@ -39,6 +45,7 @@ html body {
     font-size: 26px;
 }
 
+/* button style */
 button {
     width: 50%;
     margin-bottom: 10px;
