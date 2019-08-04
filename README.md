@@ -13,7 +13,7 @@ The scenario is similar for wrong answers and time-outs. If the player runs out 
   
 On the final screen, you'll be able to see the number of correct answers, incorrect answers, and an option to restart the game (without having to reload the page).  
   
-## Code Overview ::deciduous_tree::
+## Code Overview :deciduous_tree:
 
 I would like by stating that this code is a little WET and still needs to get refactored, but it works like a charm! Refactorization will me done as a part of the maintenance of this code. It's been proven that *"Premature optimization is the root of all evil" - Donald Knuth*, 
   
