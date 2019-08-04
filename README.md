@@ -3,7 +3,7 @@ A Lord of the Rings trivia game using JavaScript as logic and jQuery to manipula
 
 ## Game Proposition
   
-This game can be added to either a static or dynamic web page to make more attrative to clicks (no SEO).
+This game can be added to either a static or dynamic web page to make it more attrative to clicks (no SEO).
 
 ## Instructions :memo:  
   
