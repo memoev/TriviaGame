@@ -1,7 +1,7 @@
 # TriviaGame
 A Lord of the Rings trivia game using JavaScript as logic and jQuery to manipulate HTML.
 
-## Game Proposition
+## Value Proposition
   
 This game can be added to either a static or dynamic web page to make it more attrative to clicks (no SEO).
 
