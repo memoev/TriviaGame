@@ -1,4 +1,5 @@
 var trivia = {
+    //  Array of questions, answers, images and correct selection
     QandA: [
         {
            Question: "The Lord of the Rings movies are based on a novel by what author?",
@@ -42,17 +43,25 @@ var trivia = {
         }  
     ]
 };
+//  Clone object of QandA from trivia object
 var emptytrivia = {
     QandA : []
 };
+//  The quesiton lap is determined by the varible value of length inside the trivia object
 var questionLap = trivia.QandA.length;
+// Time variable 
 var time;
+// Correct and Incorrect answer trackers
 var correct = 0;
 var incorrect = 0;
+// Support variables -  Start
 var k;
 var checker;
 var intervalId;
 var clockRunning = false;
+// Support variables -  End
+
+//  The timeStuff object and it methods controls time and run a check per second and lap number.
 var timeStuff = {
     timeConverter: function(t) {
 
@@ -76,7 +85,6 @@ var timeStuff = {
     },
     startTimer: function() {
 
-        //  TODO: Use setInterval to start the count here and set the clock to running.
         if (!clockRunning) {
             intervalId = setInterval(this.runTimer, 1000);
             this.clockRunning = true;
@@ -137,24 +145,31 @@ var timeStuff = {
 
     }
 };
+//  The game objects holds methods that carry timer assignments and HTML manipulation.
 var game = {
+    //  Starts the game
     play: function() {
+
         checker = false;
         $("#result").empty();
+        //  Variable questions and answers happens right here
         k = Math.floor(Math.random() * trivia.QandA.length)
-
+        //You can adjust the time for questions here
         time = 20 + 1;
         timeStuff.startTimer();
         timeStuff.runTimer();
         $(".lead").text('Time remaining:')
-
         $("#question").text(trivia.QandA[k].Question)
+
+        //  Display list of answers to a specific question
         for (i = 0; i < trivia.QandA[k].Answers.length; i++) {
             $("ul").append("<li><button>" + trivia.QandA[k].Answers[i] + "</button></li>");  
         };
 
+        //  Correct or Incorrect Logic
         $("button").click( function() {
             if (this.innerHTML === trivia.QandA[k].CorrectAns) {
+                //  Correct answer path
                 correct++;
                 questionLap--;
                 checker = true;
@@ -172,9 +187,11 @@ var game = {
                 time = 3;
                 timeStuff.startTimer();
                 timeStuff.runTimer();
+                //  Removal from current question from the game, to avoid repeated questions
                 trivia.QandA.splice(k, 1);
                 
             } else {
+                //  Wrong answer path
                 incorrect++;
                 questionLap--;
                 checker = true;
@@ -189,38 +206,37 @@ var game = {
                 time = 3;
                 timeStuff.startTimer();
                 timeStuff.runTimer();
+                //  Removal from current question from the game, to avoid repeated questions
                 trivia.QandA.splice(k, 1);
                 
             };
         });
     },
+    //  Displays results from game when there are no more questions
     finish: function(cor, inc) {
         $("#result").text("Here's how you did - Correct Answers: " + cor + " Incorrect Answers: " + inc);
         $("#result").append("<button> Start Again? </button>");
 
+        //  Restart the game
         $("button").click( function() {
             correct = 0;
             incorrect = 0;
-            console.log(emptytrivia);
             for (i = 0; i < emptytrivia.QandA.length; i++) {
                 trivia.QandA.push(emptytrivia.QandA[i]);
             }
-            console.log(trivia);
             questionLap = trivia.QandA.length;
             game.play();
         })
     }
 }
 
+//  Play game when the window is fully loaded
 window.onload = function() {
 
+    // Clone variable emptytrivia get's values from trivia object
     for (i = 0 ; i < trivia.QandA.length ; i++){
         emptytrivia.QandA.push(trivia.QandA[i]);
     }
+    // Game plays after clonning
     game.play();
 }
-
-console.log(trivia.QandA[1].Question);
-console.log(trivia.QandA[0].Answers);
-console.log(trivia.QandA[4].CorrectAns);
-
