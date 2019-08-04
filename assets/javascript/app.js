@@ -184,7 +184,7 @@ var game = {
                 $("img").addClass("size");
                 $("img").attr("src", trivia.QandA[k].Image);
                 timeStuff.stopTimer();
-                time = 3;
+                time = 5;
                 timeStuff.startTimer();
                 timeStuff.runTimer();
                 //  Removal from current question from the game, to avoid repeated questions
@@ -203,7 +203,7 @@ var game = {
                 $("#result").append("<h3>");
                 $("h3").text("This is not the correct answer, my friend! The correct answer is " + trivia.QandA[k].CorrectAns);
                 timeStuff.stopTimer();
-                time = 3;
+                time = 5;
                 timeStuff.startTimer();
                 timeStuff.runTimer();
                 //  Removal from current question from the game, to avoid repeated questions
