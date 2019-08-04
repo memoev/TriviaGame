@@ -1,7 +1,7 @@
 # TriviaGame
 A Lord of the Rings trivia game using JavaScript as logic and jQuery to manipulate HTML.
 
-## Value Proposition
+## Value Proposition :dart:
   
 This game can be added to either a static or dynamic web page to make it more attrative to clicks (no SEO).
 
@@ -97,7 +97,7 @@ var timeStuff = {
     }
 };
 ```
-## Prerequisites
+## Prerequisites :computer:
 Working web browser (e.g Chrome, Firefox, Safari, Opera, etc.) fromt the list of browser that support jQuery (https://jquery.com/browser-support/):
 
 * Desktop:
